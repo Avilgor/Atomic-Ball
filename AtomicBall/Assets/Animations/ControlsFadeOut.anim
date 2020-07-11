@@ -42,7 +42,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.a
-    path: Pause
+    path: IJKL
     classID: 212
     script: {fileID: 0}
   - curve:
@@ -70,7 +70,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.a
-    path: IJKL
+    path: Pause
     classID: 212
     script: {fileID: 0}
   - curve:
@@ -125,10 +125,10 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_fontColor.a
-    path: IJKL/Arrow (1)
-    classID: 114
-    script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+    attribute: m_Color.a
+    path: Pause/Arrow (1)
+    classID: 212
+    script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -153,10 +153,38 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_fontColor.a
-    path: WASD/Arrow
-    classID: 114
-    script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+    attribute: m_Color.a
+    path: WASD/Arrow (1)
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Color.a
+    path: IJKL/Arrow
+    classID: 212
+    script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -194,14 +222,14 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 375111145
+      path: 3602013128
       attribute: 304273561
       script: {fileID: 0}
       typeID: 212
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 3602013128
+      path: 375111145
       attribute: 304273561
       script: {fileID: 0}
       typeID: 212
@@ -215,17 +243,24 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1724620851
-      attribute: 4185109675
-      script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-      typeID: 114
+      path: 3757740413
+      attribute: 304273561
+      script: {fileID: 0}
+      typeID: 212
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 862504584
-      attribute: 4185109675
-      script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-      typeID: 114
+      path: 2633763899
+      attribute: 304273561
+      script: {fileID: 0}
+      typeID: 212
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 350981623
+      attribute: 304273561
+      script: {fileID: 0}
+      typeID: 212
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
@@ -282,7 +317,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.a
-    path: Pause
+    path: IJKL
     classID: 212
     script: {fileID: 0}
   - curve:
@@ -310,7 +345,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.a
-    path: IJKL
+    path: Pause
     classID: 212
     script: {fileID: 0}
   - curve:
@@ -365,10 +400,10 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_fontColor.a
-    path: IJKL/Arrow (1)
-    classID: 114
-    script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+    attribute: m_Color.a
+    path: Pause/Arrow (1)
+    classID: 212
+    script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -393,10 +428,38 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_fontColor.a
-    path: WASD/Arrow
-    classID: 114
-    script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+    attribute: m_Color.a
+    path: WASD/Arrow (1)
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Color.a
+    path: IJKL/Arrow
+    classID: 212
+    script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
