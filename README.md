@@ -4,7 +4,7 @@ Game made for the GMTK Game Jam in 2020
 
 # Intro
 
-A small ball charged with atomic energy moves freely. Use your atomic reflactant walls to guide the ball to the exit.
+A small ball charged with atomic energy moves freely. Use your atomic reflactant walls to guide it to the exit.
 
 # Controls
 
