@@ -99,7 +99,7 @@ public class GameController : MonoBehaviour
         {
             point.x = UnityEngine.Random.Range(minX, maxX);
             point.z = UnityEngine.Random.Range(minY, maxY);
-            point.y = 1.0f;
+            point.y = 1.5f;
             cone.transform.position = point;
 
             cone.SetActive(true);
