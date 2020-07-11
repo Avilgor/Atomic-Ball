@@ -11,5 +11,6 @@ public class Intro : MonoBehaviour
     void Update()
     {
         if (player.isPrepared && !player.isPlaying) SceneManager.LoadScene(1);
+        if (Input.GetKeyDown(KeyCode.Escape)) SceneManager.LoadScene(1);
     }
 }
