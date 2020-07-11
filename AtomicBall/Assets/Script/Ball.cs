@@ -67,5 +67,18 @@ public class Ball : MonoBehaviour
         {
             if(!source.isPlaying) source.PlayOneShot(ballHit);
         }
+        if (collision.gameObject.CompareTag("Triangle"))
+        {
+            locked = true;
+            StartCoroutine(Stunned(3.0f));
+            //Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
+        }
+    }
+
+    IEnumerator Stunned(float time)
+    {
+        yield return new WaitForSeconds(time);
+        locked = false;
     }
 }
