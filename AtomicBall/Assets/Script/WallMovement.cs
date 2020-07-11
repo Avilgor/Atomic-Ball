@@ -19,25 +19,25 @@ public class WallMovement : MonoBehaviour
             if (Input.GetKey(Up))
             {
                 Vector3 pos = transform.position;
-                pos.z += speed;
+                pos.z += speed * Time.deltaTime;
                 transform.position = pos;
             }
             else if (Input.GetKey(Down))
             {               
                 Vector3 pos = transform.position;
-                pos.z -= speed;
+                pos.z -= speed * Time.deltaTime;
                 transform.position = pos;                   
             }
             else if (Input.GetKey(Left))
             {              
                 Vector3 pos = transform.position;
-                pos.x -= speed;
+                pos.x -= speed * Time.deltaTime;
                 transform.position = pos;               
             }
             else if (Input.GetKey(Right))
             {
                 Vector3 pos = transform.position;
-                pos.x += speed;
+                pos.x += speed * Time.deltaTime;
                 transform.position = pos;
             }
         }

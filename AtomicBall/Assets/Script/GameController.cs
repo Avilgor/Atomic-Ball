@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        Application.targetFrameRate = 60;
         Vector3 point = transform.position;
         point.x = UnityEngine.Random.Range(minX,maxX);
         point.z = UnityEngine.Random.Range(minY, maxY);
@@ -81,7 +82,7 @@ public class GameController : MonoBehaviour
         roundText.SetText(roundcounter.ToString());
 
         if (roundcounter % 3 != 0) ball.GetComponent<Ball>().NextRound(0,0,0);
-        else ball.GetComponent<Ball>().NextRound(speedIncrease,0.05f,0.2f);
+        else ball.GetComponent<Ball>().NextRound(speedIncrease,1f,0.2f);
 
         if (roundcounter > 6) cube.SetActive(true);
         if (cube.activeSelf)

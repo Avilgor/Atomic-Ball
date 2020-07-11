@@ -21,8 +21,8 @@ public class Cube : MonoBehaviour
         if (movement && Time.deltaTime > 0)
         {
             Vector3 pos = transform.position;
-            pos.x += dir.transform.forward.x * speed;
-            pos.z += dir.transform.forward.z * speed;
+            pos.x += dir.transform.forward.x * speed * Time.deltaTime;
+            pos.z += dir.transform.forward.z * speed * Time.deltaTime;
             transform.position = pos;
         }
     }

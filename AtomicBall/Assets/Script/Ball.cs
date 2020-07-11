@@ -29,8 +29,9 @@ public class Ball : MonoBehaviour
             transform.Rotate(0, rotationAngle, 0);
 
             Vector3 pos = transform.position;        
-            pos.z += transform.forward.z * speed;
-            pos.x += transform.forward.x * speed;
+            pos.z += transform.forward.z * speed * Time.deltaTime;
+            pos.x += transform.forward.x * speed * Time.deltaTime;
+            pos.y = 0.5f;
             transform.position = pos;
             ballMesh.transform.Rotate(0, 0, speed);
             
@@ -47,9 +48,9 @@ public class Ball : MonoBehaviour
     public void NextRound(float sp,float t,float ag)
     {
         locked = false;
-        if(speed < 0.2) speed += sp;
-        if (time > 0.5) time -= t;
-        if (angle < 3) angle += ag;
+        if(speed < 20f) speed += sp;
+        if (time > 0.5f) time -= t;
+        if (angle < 3f) angle += ag;
     }
 
     private void OnTriggerEnter(Collider other)

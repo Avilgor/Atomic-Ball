@@ -165,8 +165,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
+  m_Constraints: 4
+  m_CollisionDetection: 3
 --- !u!114 &2052916867419094672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,7 +180,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballMesh: {fileID: 2052916868371242624}
-  speed: 0.01
+  source: {fileID: 0}
+  ballHit: {fileID: 8300000, guid: 53f48031bd4daa643b8b7fbe587b4d66, type: 3}
+  speed: 5
   angle: 1
 --- !u!198 &1650050700
 ParticleSystem:
