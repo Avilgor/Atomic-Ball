@@ -8,10 +8,10 @@ A small ball charged with atomic energy moves freely. Use your atomic reflactant
 
 # Controls
 
-· Space => Play
+· Space -> Play
 
-· Esc => Pause 
+· Esc -> Pause 
 
-· W,A,S,D => Move horizontal wall
+· W,A,S,D -> Move horizontal wall
 
-· I,J,K,L => Move vertical wall
+· I,J,K,L -> Move vertical wall
