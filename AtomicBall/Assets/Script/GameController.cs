@@ -25,8 +25,8 @@ public class GameController : MonoBehaviour
     void Start()
     {
         source = gameObject.GetComponent<AudioSource>();
-        source.PlayOneShot(songs[UnityEngine.Random.Range(0,songs.Length)]);
-        source.loop = true;
+        source.clip = songs[UnityEngine.Random.Range(0, songs.Length)];
+        source.Play();
 
         Application.targetFrameRate = 60;
         Vector3 point = transform.position;

@@ -829,7 +829,7 @@ MonoBehaviour:
   roundText: {fileID: 183003651}
   speedIncrease: 0.01
   songs:
-  - {fileID: 8300000, guid: bae634c0b97cebe478987a483f20cac5, type: 3}
+  - {fileID: 8300000, guid: e57f3572a6cc7b7478c72af2ec588673, type: 3}
   - {fileID: 8300000, guid: 8c0d6d81f8dafbe4189bb0c1b06f1dde, type: 3}
 --- !u!4 &442196208
 Transform:
@@ -856,7 +856,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
