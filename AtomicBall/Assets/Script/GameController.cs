@@ -120,15 +120,14 @@ public class GameController : MonoBehaviour
             cube.GetComponent<Cube>().NextRound();
         }
 
-        if(roundcounter == 10) cone.SetActive(true);
         if (roundcounter > 9)
         {
             point.x = UnityEngine.Random.Range(minX, maxX);
             point.z = UnityEngine.Random.Range(minY, maxY);
             point.y = 0.5f;                      
-            cone.transform.position = point;           
-            cone.GetComponent<Cube>().ActivateMovement();           
-            cone.GetComponent<Cube>().NextRound();
+            cone.transform.position = point;
+            cone.SetActive(true);
+            cone.GetComponent<Triangle>().NextRound();
         }
 
         if (roundcounter == 1) controls.SetActive(false);
