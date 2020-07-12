@@ -59,7 +59,7 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) GoalReached();
+        //if (Input.GetKeyDown(KeyCode.Space)) GoalReached();
         if (goalReached)
         {
             if (counter < 1.0f) counter += Time.deltaTime;
