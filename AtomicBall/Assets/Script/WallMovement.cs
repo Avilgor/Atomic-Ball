@@ -60,6 +60,7 @@ public class WallMovement : MonoBehaviour
             speed += 10;
             StartCoroutine(Boost(5));
             GetComponent<Renderer>().material = boostMaterial;
+            source.PlayOneShot(boost);
         }
     }
 
