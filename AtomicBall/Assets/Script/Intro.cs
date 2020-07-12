@@ -6,11 +6,30 @@ using UnityEngine.Video;
 
 public class Intro : MonoBehaviour
 {
-    [SerializeField] VideoPlayer player;
+    [SerializeField] GameObject Logo;
+    [SerializeField] GameObject IntroGO;
 
     void Update()
     {
-        if (player.isPrepared && !player.isPlaying) SceneManager.LoadScene(1);
+        if (Logo.activeSelf)
+        {
+            if (Logo.GetComponent<VideoPlayer>().isPrepared && !Logo.GetComponent<VideoPlayer>().isPlaying)
+            {
+                Logo.SetActive(false);
+                IntroGO.SetActive(true);
+            }
+        }
+        else 
+        {
+            if (IntroGO.activeSelf)
+            {
+                if (IntroGO.GetComponent<VideoPlayer>().isPrepared && !IntroGO.GetComponent<VideoPlayer>().isPlaying)
+                {
+                    SceneManager.LoadScene(1);
+                }
+            }
+        }
+        
         if (Input.GetKeyDown(KeyCode.Escape)) SceneManager.LoadScene(1);
     }
 }

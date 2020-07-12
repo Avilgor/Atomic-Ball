@@ -108,8 +108,9 @@ public class GameController : MonoBehaviour
             point.z = UnityEngine.Random.Range(minY, maxY);
             point.y = 0.5f;
             cone.transform.position = point;
-
+            if (roundcounter == 13) cone.GetComponent<Cube>().ActivateMovement();
             cone.SetActive(true);
+            cone.GetComponent<Cube>().NextRound();
         }
 
         goal.SetActive(true);
