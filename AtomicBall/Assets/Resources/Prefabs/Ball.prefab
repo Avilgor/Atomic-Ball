@@ -182,6 +182,11 @@ MonoBehaviour:
   ballMesh: {fileID: 2052916868371242624}
   source: {fileID: 0}
   ballHit: {fileID: 8300000, guid: 53f48031bd4daa643b8b7fbe587b4d66, type: 3}
+  stunned: {fileID: 8300000, guid: ccf0e3f967e0bd8469916971774a14bc, type: 3}
+  boost: {fileID: 8300000, guid: ea021625707afe54ba08b213d2c8e627, type: 3}
+  goal: {fileID: 8300000, guid: c637f37fe1c5e1241aae82b14f4cffc1, type: 3}
+  boostMaterial: {fileID: 2100000, guid: 9b379ef41ab3fef45b33650ebd0a4e21, type: 2}
+  stunnedMaterial: {fileID: 2100000, guid: a211932f3fa60e847ae42ef96945140d, type: 2}
   speed: 5
   angle: 1
 --- !u!198 &1650050700

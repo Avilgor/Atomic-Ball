@@ -11,7 +11,7 @@ public class Cube : MonoBehaviour
     [SerializeField] AudioSource source;
     [SerializeField] AudioClip boost;
     [SerializeField] Material boostMaterial;
-    bool movement;
+    [SerializeField] bool movement;
     float basespeed;
     Material baseMaterial;
 

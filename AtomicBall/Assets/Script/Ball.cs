@@ -10,6 +10,7 @@ public class Ball : MonoBehaviour
     [SerializeField] AudioClip ballHit;
     [SerializeField] AudioClip stunned;
     [SerializeField] AudioClip boost;
+    [SerializeField] AudioClip goal;
     [SerializeField] Material boostMaterial;
     [SerializeField] Material stunnedMaterial;
     public float speed = 0.01f;
@@ -66,6 +67,7 @@ public class Ball : MonoBehaviour
         if(other.gameObject.CompareTag("Goal"))
         {
             GameObject.Find("GameController").GetComponent<GameController>().GoalReached();
+            source.PlayOneShot(goal);
             locked = true;
         }
     }

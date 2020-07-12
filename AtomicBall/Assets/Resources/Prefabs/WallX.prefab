@@ -112,6 +112,9 @@ MonoBehaviour:
   Right: 100
   Left: 97
   speed: 10
+  source: {fileID: 0}
+  boost: {fileID: 8300000, guid: ea021625707afe54ba08b213d2c8e627, type: 3}
+  boostMaterial: {fileID: 2100000, guid: 9b379ef41ab3fef45b33650ebd0a4e21, type: 2}
 --- !u!54 &2025207340
 Rigidbody:
   m_ObjectHideFlags: 0
