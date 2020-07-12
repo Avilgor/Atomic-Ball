@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour
     [SerializeField] GameObject ball;
     [SerializeField] GameObject cube;
     [SerializeField] GameObject cone;
+    [SerializeField] GameObject controls;
+    [SerializeField] GameObject speedPower;
     [SerializeField] float minX;
     [SerializeField] float maxX;
     [SerializeField] float minY;
@@ -21,6 +23,8 @@ public class GameController : MonoBehaviour
     int roundcounter;
     bool goalReached;
     float counter;
+    bool boostSpawn;
+    float boostCD;
 
     void Start()
     {
@@ -47,6 +51,10 @@ public class GameController : MonoBehaviour
         if (cube.activeSelf) cube.SetActive(false);
         if (goalGreen.activeSelf) goalGreen.SetActive(false);
         if (cone.activeSelf) cone.SetActive(false);
+
+        boostSpawn = false;
+        boostCD = 30f;
+        controls.SetActive(true);
     }
 
     private void Update()
@@ -56,6 +64,15 @@ public class GameController : MonoBehaviour
         {
             if (counter < 1.0f) counter += Time.deltaTime;
             else Reposition();
+        }
+
+        if (roundcounter > 5)
+        {
+            if (!boostSpawn)
+            {
+                StartCoroutine(SpawnBoost(UnityEngine.Random.Range(boostCD - 2f, boostCD + 2f)));
+                boostSpawn = true;
+            }          
         }
 
         if (Time.deltaTime == 0) source.Pause();
@@ -83,17 +100,15 @@ public class GameController : MonoBehaviour
         point.y = 0.2f;
         goal.transform.position = point;
 
-       
-
-        
-
         roundcounter++;
         roundText.SetText(roundcounter.ToString());
 
-        if (roundcounter % 3 != 0) ball.GetComponent<Ball>().NextRound(0,0,0);
-        else ball.GetComponent<Ball>().NextRound(speedIncrease,1f,0.2f);
+        if (roundcounter % 3 == 0) ball.GetComponent<Ball>().NextRound(speedIncrease, 1f, 0.2f); 
+        else ball.GetComponent<Ball>().NextRound(0, 0, 0);
 
-        if (roundcounter == 5) cube.SetActive(true);
+        if (roundcounter > 6 && roundcounter % 2 == 0 && boostCD > 10) boostCD--;
+
+        if (roundcounter == 4) cube.SetActive(true);
         if (cube.activeSelf)
         {
             point.x = UnityEngine.Random.Range(minX, maxX);
@@ -101,24 +116,33 @@ public class GameController : MonoBehaviour
             point.y = 1.0f;
             cube.transform.position = point;
 
-            if (roundcounter == 9) cube.GetComponent<Cube>().ActivateMovement();
+            if (roundcounter == 7) cube.GetComponent<Cube>().ActivateMovement();
             cube.GetComponent<Cube>().NextRound();
         }
 
-        if (roundcounter > 11)
+        if (roundcounter > 9)
         {
             point.x = UnityEngine.Random.Range(minX, maxX);
             point.z = UnityEngine.Random.Range(minY, maxY);
             point.y = 0.5f;
             cone.transform.position = point;
-            if (roundcounter == 12) cone.GetComponent<Cube>().ActivateMovement();
+            if (roundcounter == 10) cone.GetComponent<Cube>().ActivateMovement();
             cone.SetActive(true);
             cone.GetComponent<Cube>().NextRound();
         }
+
+        if (roundcounter == 1) controls.SetActive(false);
 
         goal.SetActive(true);
         goalGreen.SetActive(false);
         counter = 0;
         goalReached = false;
+    }
+
+    IEnumerator SpawnBoost(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Instantiate(speedPower, new Vector3(UnityEngine.Random.Range(minX, maxX), 48, UnityEngine.Random.Range(minY, maxY)),Quaternion.identity);
+        boostSpawn = false;
     }
 }

@@ -8,11 +8,19 @@ public class Cube : MonoBehaviour
 
     [SerializeField] float speed;
     [SerializeField] Transform dir;
+    [SerializeField] AudioSource source;
+    [SerializeField] AudioClip boost;
+    [SerializeField] Material boostMaterial;
     bool movement;
+    float basespeed;
+    Material baseMaterial;
+
 
     void Start()
     {
         movement = false;
+        basespeed = speed;
+        baseMaterial = GetComponent<Renderer>().material;
     }
 
     // Update is called once per frame
@@ -42,5 +50,21 @@ public class Cube : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.layer == 9) NextRound();
+
+        if (collision.gameObject.CompareTag("Speed"))
+        {
+            Destroy(collision.gameObject);
+            speed += 5;
+            StartCoroutine(Boost(5));
+            source.PlayOneShot(boost);
+            GetComponent<Renderer>().material = boostMaterial;
+        }
+    }
+
+    IEnumerator Boost(float time)
+    {
+        yield return new WaitForSeconds(time);
+        speed = basespeed;
+        GetComponent<Renderer>().material = baseMaterial;
     }
 }

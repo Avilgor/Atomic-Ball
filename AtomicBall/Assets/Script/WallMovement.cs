@@ -9,11 +9,20 @@ public class WallMovement : MonoBehaviour
     [SerializeField] KeyCode Right;
     [SerializeField] KeyCode Left;
     [SerializeField] float speed;
-    
-    
-    void Update()
+    [SerializeField] AudioSource source;
+    [SerializeField] AudioClip boost;
+    [SerializeField] Material boostMaterial;
+    float baseSpeed;
+    Material baseMaterial;
+
+    private void Start()
     {
-        
+        baseSpeed = speed;
+        baseMaterial = GetComponent<Renderer>().material;
+    }
+
+    void Update()
+    {         
         if (Time.deltaTime > 0)
         {
             if (Input.GetKey(Up))
@@ -41,5 +50,23 @@ public class WallMovement : MonoBehaviour
                 transform.position = pos;
             }
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Speed"))
+        {
+            Destroy(collision.gameObject);
+            speed += 10;
+            StartCoroutine(Boost(5));
+            GetComponent<Renderer>().material = boostMaterial;
+        }
+    }
+
+    IEnumerator Boost(float time)
+    {
+        yield return new WaitForSeconds(time);
+        speed = baseSpeed;
+        GetComponent<Renderer>().material = baseMaterial;
     }
 }

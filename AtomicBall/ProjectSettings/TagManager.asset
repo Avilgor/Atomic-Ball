@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Goal
   - Triangle
+  - Speed
   layers:
   - Default
   - TransparentFX
