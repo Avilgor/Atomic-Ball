@@ -16,12 +16,18 @@ public class GameController : MonoBehaviour
     [SerializeField] float maxY;
     [SerializeField] TextMeshProUGUI roundText;
     [SerializeField] float speedIncrease;
+    [SerializeField] AudioClip[] songs;
+    AudioSource source;
     int roundcounter;
     bool goalReached;
     float counter;
 
     void Start()
     {
+        source = gameObject.GetComponent<AudioSource>();
+        source.PlayOneShot(songs[UnityEngine.Random.Range(0,songs.Length)]);
+        source.loop = true;
+
         Application.targetFrameRate = 60;
         Vector3 point = transform.position;
         point.x = UnityEngine.Random.Range(minX,maxX);
@@ -100,7 +106,7 @@ public class GameController : MonoBehaviour
         {
             point.x = UnityEngine.Random.Range(minX, maxX);
             point.z = UnityEngine.Random.Range(minY, maxY);
-            point.y = 1.5f;
+            point.y = 0.5f;
             cone.transform.position = point;
 
             cone.SetActive(true);
