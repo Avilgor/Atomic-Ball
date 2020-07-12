@@ -57,6 +57,9 @@ public class GameController : MonoBehaviour
             if (counter < 1.0f) counter += Time.deltaTime;
             else Reposition();
         }
+
+        if (Time.deltaTime == 0) source.Pause();
+        else if(!source.isPlaying) source.Play();
     }
 
     public void GoalReached()
@@ -90,7 +93,7 @@ public class GameController : MonoBehaviour
         if (roundcounter % 3 != 0) ball.GetComponent<Ball>().NextRound(0,0,0);
         else ball.GetComponent<Ball>().NextRound(speedIncrease,1f,0.2f);
 
-        if (roundcounter > 6) cube.SetActive(true);
+        if (roundcounter == 5) cube.SetActive(true);
         if (cube.activeSelf)
         {
             point.x = UnityEngine.Random.Range(minX, maxX);
@@ -98,17 +101,17 @@ public class GameController : MonoBehaviour
             point.y = 1.0f;
             cube.transform.position = point;
 
-            if (roundcounter == 12) cube.GetComponent<Cube>().ActivateMovement();
+            if (roundcounter == 9) cube.GetComponent<Cube>().ActivateMovement();
             cube.GetComponent<Cube>().NextRound();
         }
 
-        if (roundcounter > 12)
+        if (roundcounter > 11)
         {
             point.x = UnityEngine.Random.Range(minX, maxX);
             point.z = UnityEngine.Random.Range(minY, maxY);
             point.y = 0.5f;
             cone.transform.position = point;
-            if (roundcounter == 13) cone.GetComponent<Cube>().ActivateMovement();
+            if (roundcounter == 12) cone.GetComponent<Cube>().ActivateMovement();
             cone.SetActive(true);
             cone.GetComponent<Cube>().NextRound();
         }
